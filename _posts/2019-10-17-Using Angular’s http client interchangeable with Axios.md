@@ -4,6 +4,7 @@ title:  "Using Angular’s http client interchangeable with Axios"
 date:   2019-10-17 18:50:32 +0200
 categories: angular
 author: Maverick
+comments: true
 ---
 
 In this short tutorial, you are going to be learning how do you replace Angular’s default http client with Axios in case you would like to experiment.

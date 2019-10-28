@@ -4,6 +4,7 @@ title:  "Setup VS Code to run TypeScript in watch mode"
 date:   2019-10-16 18:50:32 +0200
 categories: general
 author: Maverick
+commetns: true
 ---
 
 In this short tutorial, I am going to show you how to get you started with TypeScript in vscode in watch mode so it will automatically compile on save with TSLint as well.

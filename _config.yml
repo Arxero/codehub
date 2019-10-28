@@ -30,6 +30,7 @@ twitter_username: arxero
 github_username:  arxero
 
 paginate: 4
+disqus_shortname: codehub-4
 
 # Build settings
 theme: darlog
