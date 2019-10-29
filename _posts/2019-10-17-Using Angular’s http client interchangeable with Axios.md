@@ -14,7 +14,7 @@ Let’s first start with creating a new angular project and then creating a simp
 [Finished Live Example](https://stackblitz.com/edit/angular-wylrjv)
 
     ng new axios-tutorial
-    cd axios-tutorial/
+    cd axios-tutorial
     npm i axios
 
 With that out of the way let’s write our generic service I mentioned above. I will be making only one just the get method, but other are in the same way.
