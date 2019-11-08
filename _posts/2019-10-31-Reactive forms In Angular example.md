@@ -79,9 +79,8 @@ export class AppComponent implements OnInit {
 `app.component.html`
 ```html
 <form [formGroup]="addPersonForm" (ngSubmit)="onSubmit(addPersonForm.value)">
-
-
   <div>
+  
     <input placeholder="Name" formControlName="name">
     <div class="error" *ngIf="name.errors?.required && name.touched">
       Name is <strong>required</strong>
@@ -109,7 +108,6 @@ export class AppComponent implements OnInit {
     <div *ngIf="age.errors?.max && age.touched">
       Max Value of <strong>101</strong> exceeded
     </div>
-
 
   </div>
 

@@ -29,23 +29,80 @@ This is how we send our data `[names]` is what the child component expects and `
 ```html
 <app-child [names]="names"></app-child>
 ```
-Also don't forget to let know the `child component` to expect what we give him by adding this.
+Also don't forget to let know the `child.component.ts` to expect what we give him by adding this.
 
 ```typescript
 export class ChildComponent {
-@Input() names: string[];
+  @Input() names: string[];
 }
 ```
-and the html
+and the html, this will just render the names.
 ```html
-<div *ngFor="let name of names">
-  <br>
-   {% raw  %} 
-    {{ name }}
-   {% endraw %}
-  <button>Delete</button>
-</div>
+<div *ngFor="let name of names">{% raw %}{{ name }}{% endraw %}</div>
 ```
 And with this the input part is done, simple as that. Now let's do the Output.
 
 ## Output
+
+Now let's add a button which on click will remove the selected element
+
+`child component`
+
+```html
+<div *ngFor="let name of names">
+  {% raw %}{{ name }}{% endraw %}
+  <button (click)="onRemove(name)">Delete</button>
+</div>
+```
+
+and handle the `onRemove` function in the **ts** file.
+```typescript
+export class ChildComponent {
+  @Input() names: string[];
+
+  onRemove(name: string) {
+    this.names = this.names.filter(x => x !== name);
+  }
+}
+```
+
+I am doing this in order to have something meaningful to sent to the parent component, which will be the name of the deleted element.
+Introduce the `Output` decorator like so:
+
+```typescript
+@Output() deletedName: EventEmitter<string> = new EventEmitter();
+```
+
+and then just add emit the name value to the parent component
+
+```typescript
+  onRemove(name: string) {
+    this.names = this.names.filter(x => x !== name);
+    this.deletedName.emit(name);
+  }
+```
+`app component (parent)`
+
+```html
+<app-child [names]="names" (deletedName)="onDeletedName($event)"></app-child>
+<br>
+
+<div *ngIf="deletedName">
+  Deleted Name is: {% raw %}{{ deletedName }}{% endraw %}
+</div>
+```
+
+We just added a function which will receive what we sent
+
+```typescript
+export class AppComponent {
+  names: string[] = ['Maverick', 'Stanislav', 'Arxero', 'Feruchio', 'Mavericus', 'Arxiour'];
+  deletedName: string;
+
+  onDeletedName(name: string) {
+    this.deletedName = name;
+  }
+}
+```
+
+And that's pretty much it to input and output in angular, as simple as it gets. Feel free to add a comment if you think you can help someone with something.
