@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Input and Output in Angular"
-date:   2019-10-31 18:50:32 +0200
+date:   2019-11-7 18:50:32 +0200
 categories: angular
 author: Maverick
 comments: true
