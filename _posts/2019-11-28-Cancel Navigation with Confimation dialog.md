@@ -15,6 +15,7 @@ In this tutorial you will be learning how to cancel navigation with confrimation
 
     ng new cancel-navigation-tutorial
     cd cancel-navigation-tutorial
+    ng add @angular/material
 
 Now let's generate two component which we are gonna use for navigation
     
