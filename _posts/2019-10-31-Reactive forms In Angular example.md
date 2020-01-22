@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Reactive forms In Angular, examle"
+title:  "Reactive forms In Angular, example"
 date:   2019-10-31 18:50:32 +0200
 categories: angular
 author: Maverick
