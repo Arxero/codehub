@@ -14,7 +14,6 @@ Hello everyone, in the last post I showed you how to add Ngrx to your angular pr
 
     ng new angular-behavior-subject-tutorial
     cd angular-behavior-subject-tutorial
-    ng add @angular/material
 
 Now let's generate our state service
 
