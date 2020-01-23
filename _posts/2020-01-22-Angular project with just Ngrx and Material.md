@@ -164,8 +164,7 @@ export class PeopleEffects {
 And everything seem to be wired up now let's show some people in `app.component.html`
 ```html
 <div *ngFor="let item of people$ | async">
-  {{ item.name}}
-  {{ item.age}}
+   {% raw %}{{ item.name }} {{ item.age }}{% endraw %}
 </div>
 ```
 
@@ -199,4 +198,4 @@ export class AppComponent implements OnInit {
 }
 ```
 
-And finally `ng serve` should add show you the people on home page.
+And finally `ng serve` should show you the people on home page.
